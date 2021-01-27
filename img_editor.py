@@ -138,7 +138,7 @@ btn2.place(x=322, y=142)
 
 #combobox
 
-label_1=tk.Label(label_r, text="Select Resolution ",bd=0,bg="#f0e68c",font=("Serif",10))
+label_1=tk.Label(label_r, text="Compress Size ",bd=0,bg="#f0e68c",font=("Serif",10))
 label_1.place(x=157,y=68)
 label_2=tk.Label(label_r,text="x",bg="#f0e68c",font=("bold"))
 label_2.place(x=201,y=88)
@@ -190,13 +190,16 @@ save_button=ttk.Button(label_r,text="Save",width=7, command=save)
 save_button.place(x=217,y=157)
 
 def dosomething():
-    try:
-        a=messagebox.askyesno("wanna cancel!","Sochh le <*!*>"  )
-        if a:
-            win.destroy()    
-            D.destroy()    
-    except:
-        pass
+    if d:
+        try:
+            a=messagebox.askyesno("wanna cancel!","Sochh le <*!*>"  )
+            if a:
+                win.destroy()    
+                D.destroy()    
+        except:
+            pass
+    else:
+        win.destroy()    
 win.protocol("WM_DELETE_WINDOW",dosomething)
 win.mainloop()
 
